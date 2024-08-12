@@ -1,0 +1,54 @@
+# test cases for is_lat 
+(a b c d e f) 
+(a b () d e f) 
+
+# list_pair
+(a b c d e f) (a b c d e f) 
+
+# firsts
+( a c e g i ) ( b d f h j )
+
+# flat
+( ( ( ) () ) ( ( ) ) )
+( ( b ) (c d) ( e (f (g))) (h i ))
+
+# intersection
+() ( a b c )
+(a b c ) ()
+( a b c d ) ( e f g h )
+( a b c d ) ( e f a )
+
+# union
+() ( a b c )
+(a b c ) ()
+( a b c d ) ( e f g h )
+( a b c d ) ( a b c d ) 
+( a b c d ) ( e f a )
+
+# two the same
+( ( b ) (c d) ( e (f (g))) (h i ))  
+( ( b ) (c d) ( e (f (g))) (h i )) 
+
+( ( ( a b ) (c d) ( e (f (g))) (h i )) ( ( a b ) (c d) ( e (f (g))) (h i )) )  
+( ( ( x y ) (x) ( z (q (r))) ( m n )) ( ( z ) ( x y ) ( a (m (n))) ( w y )) )  
+
+( ( ( a b ) (c d) ( e (f (g))) (h i )) ( ( a b ) (c d) ( e (f (g))) (h i )) )  
+( ( ( x y ) (x) ( z (q (r))) ( m n )) ( ( z ) ( x y ) (  (m (n))) ( w y )) )  
+
+# equal -- the first two lists are equal; the second two lists are not.
+( ( ( a b ) (c d) ( e (f (g))) (h i )) ( ( a b ) (c d) ( e (f (g))) (h i )) )
+( ( ( a b ) (c d) ( e (f (g))) (h i )) ( ( a b ) (c d) ( e (f (g))) (h i )) )
+
+( ( ( a b ) (c d) ( e (f (g))) (h i )) ( ( a b ) (c d) ( e (f (g))) (h i )) )
+( ( ( a b ) (c d) ( e (f (g))) (h i )) ( ( a b ) (c d) ( e (f (g))) (h x )) )
+
+# member
+a
+( ( ( a b ) (c d) ( e (f (g))) (h i )) ( ( a b ) (c d) ( e (f (g))) (h i )) )
+a
+( ( ( b ) (c d) ( e (f (g))) (h i )) ( ( b ) (c d) ( e (f (g))) (h i )) )
+
+# shape
+( ( b ) (c d) ( e (f (g))) (h i ))
+( ( ( b ) (c d) ( e (f (g))) (h i )) ( ( b ) (c d) ( e (f (g))) (h i )) )
+( ( (  ) () (  ( (g))) ( )) ( ( ) () ( ( ())) ( )) )
